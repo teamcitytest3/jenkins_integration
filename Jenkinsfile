@@ -1,15 +1,10 @@
-pipeline {
-  agent {
-    node {
-      label 'windows'
-    }
+node('windows') {
+    ansiColor('xterm') {
+        cleanWs()
 
-  }
-  stages {
-    stage('build') {
-      steps {
-        powershell(script: 'write-out "Hello!"', returnStdout: true)
-      }
+        stage('build'){
+            powershell '''
+                Write-Output "Hello!"'''
+        }
     }
-  }
 }
