@@ -3,7 +3,7 @@ node('windows') {
     ansiColor('xterm') {
         cleanWs()
         def workspace = pwd()
-        stage('build'){
+        stage('Build'){
             powershell '''
                 Write-Output "Hello!"
                 Get-ChildItem -Directory ${workspace} '''
