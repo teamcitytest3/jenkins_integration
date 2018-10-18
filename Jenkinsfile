@@ -5,7 +5,8 @@ node('windows') {
         def workspace = pwd()
         stage('build'){
             powershell '''
-                Write-Output "Hello!" '''
+                Write-Output "Hello!"
+                Get-ChildItem -Directory ${workspace} '''
         }
     }
 }
