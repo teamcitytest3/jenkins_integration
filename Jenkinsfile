@@ -12,7 +12,7 @@ node('windows') {
             powershell """
                 Write-Output "Downloading license.xml file"
                 Write-Output "${ENV:LICENSE_URL}"
-                #Invoke-WebRequest -Uri ${ENV:LICENSE_URL} -OutFile "${workspace}\\license.xml"
+                Invoke-WebRequest -Uri ${ENV:LICENSE_URL} -OutFile "${workspace}\\license.xml"
             """
         }
     }
