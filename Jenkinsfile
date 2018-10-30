@@ -43,6 +43,7 @@ node('windows') {
         def scmVars = checkout scm
         def branchName = scmVars.GIT_BRANCH
         def cid = env.CHANGE_ID
+        def LICENSE_URL = "https://nmaltsevastorage.blob.core.windows.net/sandbox/license.xml"
         if(env.CHANGE_ID && branch != 'develop') {
             stage('Build'){
                 powershell """
